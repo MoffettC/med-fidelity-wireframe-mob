@@ -36,13 +36,13 @@ class Services extends Component {
   render() {
     return (
         <Layout>
-            <Row className="" style={{marginBottom: '3em'}}>
+            <Row className="" style={{paddingBottom: '3em', backgroundColor: `paleturquoise`}}>
                 <Col className="p-0">
                     <Jumbotron fluid style={{height: this.state.height, backgroundImage: this.state.url,
-                                                backgroundRepeat: `no-repeat`, backgroundSize: `cover`, backgroundColor: `gray`}}>
-                        <Container style={{textAlign: 'center'}}>
-                            <h1 className="display-3" style={{color: `black`}}>Services</h1>
-                            <p style={{color: `black`}}>
+                                                backgroundRepeat: `no-repeat`, backgroundSize: `cover`, backgroundColor: `paleturquoise`}}>
+                        <Container style={{textAlign: 'center', paddingTop: '4em'}}>
+                            <h1 className="display-2" style={{color: `black`}}>Services</h1>
+                            <p className="h5" style={{color: `black`}}>
                             Use a super motivational quote about everything
                             </p>
                         </Container>
@@ -50,24 +50,24 @@ class Services extends Component {
                 </Col>
             </Row>
 
-            <Row className="d-flex justify-content-md-center" style={{marginBottom: '12em'}}> 
+            <Row className="d-flex justify-content-md-center" style={{backgroundColor: 'paleturquoise', paddingBottom: '3em'}}> 
+                <Col className="">
+                    <Card style={{backgroundColor: 'paleturquoise', width: '100%', textAlign: "center", border: "none"}}>
+                    <Card.Body>
+                        <Image className="mb-3" src="https://source.unsplash.com/random/100x100" roundedCircle/>
+                        <Card.Title as="h1">Government Contracting</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                        <Card.Text>
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+
+            <Row className="d-flex justify-content-md-center" style={{marginTop: '3em', marginBottom: '3em'}}> 
                 <Col md={6} className="">
 
-                    <Row className="d-flex justify-content-md-center" style={{marginTop: '2em', marginBottom: '2em'}}>
-                        <Col >
-                            <Card style={{width: '100%', textAlign: "center", border: "none"}}>
-                            <Card.Body>
-                                <Image className="mb-3" src="https://source.unsplash.com/random/100x100" roundedCircle/>
-                                <Card.Title as="h1">Government Contracting</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                                <Card.Text>
-                                </Card.Text>
-                            </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-
-                    <Row style={{marginBottom: '5em'}}>
+                    <Row style={{marginTop: '1em', marginBottom: '5em'}}>
                         <Col className="d-flex justify-content-md-center" md={3}>
                             {/* <Image className="mb-3" src="https://source.unsplash.com/random/150x400" rounded/> */}
 
@@ -215,22 +215,27 @@ class Services extends Component {
                             </Row>
                         </Col>
                     </Row>
+                </Col>
+            </Row>
+
+            <Row className="d-flex justify-content-md-center" style={{backgroundColor: 'paleturquoise', 
+                                                                paddingTop: '4em', paddingBottom: '4em'}}> 
+                <Col className="">
+                    <Card style={{backgroundColor: 'paleturquoise', width: '100%', textAlign: "center", border: "none"}}>
+                    <Card.Body>
+                        <Image className="mb-3" src="https://source.unsplash.com/random/100x101" roundedCircle/>
+                        <Card.Title as="h1">Commerical Contracting</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                        <Card.Text>
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
 
 
-
-                    <Row className="d-flex justify-content-md-center" style={{marginTop: '6em', marginBottom: '2em'}}>
-                        <Col >
-                            <Card style={{width: '100%', textAlign: "center", border: "none"}}>
-                            <Card.Body>
-                                <Image className="mb-3" src="https://source.unsplash.com/random/100x101" roundedCircle/>
-                                <Card.Title as="h1">Commercial Contracting</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                                <Card.Text>
-                                </Card.Text>
-                            </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
+            <Row className="d-flex justify-content-md-center" style={{marginTop: '4em', marginBottom: '12em'}}> 
+                <Col md={6} className="">
 
                     <Row style={{marginBottom: '5em'}}>
                         <Col className="d-flex justify-content-md-center" md={3}>

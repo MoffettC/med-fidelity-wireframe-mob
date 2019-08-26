@@ -23,26 +23,36 @@ class About extends Component {
     componentWillUnmount() {
         window.removeEventListener('resize', this.updateWindowDimensions);
     }
-    
+
     updateWindowDimensions() {
         let modifiedHeight = (window.innerHeight) * 0.7;
-        this.setState({ 
-            width: window.innerWidth, 
-            height: modifiedHeight,
-            url: "url(https://source.unsplash.com/QckxruozjRg/" + window.innerWidth + "x" + modifiedHeight +")"});
-    }
+        let hero = "https://source.unsplash.com/yZygONrUBe8/" + window.innerWidth + "x" + modifiedHeight
 
+        fetch(hero)
+            .then (res => {
+                var searchParams = new URLSearchParams(res.url);
+                searchParams.set("crop", "edges");
+
+                this.setState({ 
+                    width: window.innerWidth, 
+                    height: modifiedHeight,
+                    // url: "url(" + decodeURIComponent(decodeURIComponent(searchParams.toString())) + ")"
+                    url: "url(hero)"
+                })
+            })
+
+    }
 
   render() {
     return ( 
         <Layout>
-            <Row className="" style={{marginBottom: '6em'}}>
+            <Row className="" style={{paddingBottom: '6em', backgroundColor: `lightsteelblue`}}>
                 <Col className="p-0">
                     <Jumbotron fluid style={{height: this.state.height, backgroundImage: this.state.url,
                                                 backgroundRepeat: `no-repeat`, backgroundSize: `cover`, backgroundColor: `gray`}}>
-                        <Container style={{textAlign: 'center'}}>
-                            <h1 className="display-3" style={{color: `white`}}>About here</h1>
-                            <p style={{color: `white`}}>
+                        <Container style={{textAlign: 'center', paddingTop: '4em'}}>
+                            <h1 className="display-2" style={{color: `white`}}>About</h1>
+                            <p className="h5" style={{color: `white`}}>
                             Use a super motivational quote about everything
                             </p>
                         </Container>
@@ -50,43 +60,28 @@ class About extends Component {
                 </Col>
             </Row>
 
-            <Row className="d-flex justify-content-md-center" style={{marginBottom: '12em'}}> 
+            <Row className="d-flex justify-content-md-center" style={{paddingBottom: '9em', backgroundColor: `lightsteelblue`}}> 
                 <Col md={6} className="">
-
-                    <Row style={{marginBottom: '6em'}}>
-                        <Col>
-                            <Card className="text-center">
-                                <Card.Header as="h1">Featured</Card.Header>
-                                <Card.Body>
-                                        <Image className="mb-3" src="https://source.unsplash.com/random/150x150" roundedCircle/>
-                                        <Card.Title>CEO</Card.Title>
-                                        <Card.Text>
-                                        With supporting text below as a natural lead-in to additional content. <br></br>
-                                        With supporting text below as a natural lead-in to additional content. <br></br>
-                                        With supporting text below as a natural lead-in to additional content.
-                                        </Card.Text>
-                                        <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                                {/* <Card.Img variant="bot" src="https://source.unsplash.com/random/1120x200" /> */}
-                            </Card>
-                        </Col>
-                    </Row>
-
-                    {/* <Row className="mb-5">
-                        <Col>
-                            <Card>
-                                <Card.Header>Featured</Card.Header>
-                                <Card.Body>
-                                    <Card.Title>Special title treatment</Card.Title>
-                                    <Card.Text>
-                                    With supporting text below as a natural lead-in to additional content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
+                    <Card className="text-center">
+                        <Card.Header as="h1">Featured</Card.Header>
+                        <Card.Body >
+                                <Image className="mb-3" src="https://source.unsplash.com/random/150x150" roundedCircle/>
+                                <Card.Title>CEO</Card.Title>
+                                <Card.Text>
+                                With supporting text below as a natural lead-in to additional content. <br></br>
+                                With supporting text below as a natural lead-in to additional content. <br></br>
+                                With supporting text below as a natural lead-in to additional content.
+                                </Card.Text>
+                                <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                        {/* <Card.Img variant="bot" src="https://source.unsplash.com/random/1120x200" /> */}
+                    </Card>
+                </Col>
+            </Row>
 
 
-                        </Col>
-                    </Row> */}
+            <Row className="d-flex justify-content-md-center" style={{marginTop:'3em', marginBottom: '4em'}}> 
+                <Col md={6} className="">
 
                     <Row className="d-flex justify-content-md-center" style={{marginTop: '3em'}}>
                         <Col >
@@ -131,18 +126,24 @@ class About extends Component {
                         </Col>
                     </Row>
 
-                    <Row className="d-flex justify-content-md-center" style={{marginTop: '10em', marginBottom: '10em'}}>
-                        <Col>
-                            <blockquote className="blockquote mb-0 text-right">
-                                <p class="display-3">
-                                    {' '}Moebius always brings the best of people.{' '}
-                                </p>
-                                <footer className="blockquote-footer">
-                                    <cite title="Source Title">Client</cite>
-                                </footer>
-                            </blockquote>
-                        </Col>
-                    </Row>
+                    </Col>
+                </Row>
+
+                <Row className="d-flex justify-content-md-center" style={{paddingTop: '4em', paddingBottom: '4em', backgroundColor: `lightsteelblue`}}>
+                    <Col md={6}>
+                        <blockquote className="blockquote mb-0 text-right">
+                            <p class="display-3">
+                                {' '}Moebius always brings the best of people.{' '}
+                            </p>
+                            <footer className="blockquote-footer">
+                                <cite title="Source Title">Client</cite>
+                            </footer>
+                        </blockquote>
+                    </Col>
+                </Row>
+
+                <Row className="d-flex justify-content-md-center" style={{paddingTop: '4em', marginBottom: '6em'}}> 
+                    <Col md={6} className="">    
 
                     <Row className="d-flex justify-content-md-center" style={{marginTop: '3em'}}>
                         <Col>
